@@ -1,48 +1,71 @@
 ---
-title: Projects
+title: Проєкти
+description: Колекція проєктів та експериментів
+tags: [projects, portfolio]
 ---
 
-A collection of things I'm building, exploring, or have completed.
+Колекція речей, які я будую, досліджую або завершив.
 
-## Current Focus
+## Поточний фокус
 
 <div class="card-grid">
 <div class="card">
 
-### Digital Garden
-Building this very site as a public knowledge base.
+### 🌱 Цифровий сад
+Побудова цього сайту як публічної бази знань.
 
-<span class="tag">web</span>
-<span class="tag">markdown</span>
+<span class="tag">#web</span>
+<span class="tag">#markdown</span>
 
 </div>
 <div class="card">
 
-### Learning in Public
-Documenting my learning journey across various topics.
+### 📝 Публічне навчання
+Документування процесу навчання різним темам.
 
-<span class="tag">meta</span>
-<span class="tag">writing</span>
+<span class="tag">#meta</span>
+<span class="tag">#writing</span>
 
 </div>
 </div>
 
-## Ideas & Explorations
+## Ідеї та дослідження
 
-Things I'm curious about and may pursue:
+<div class="callout callout-quote">
+<div class="callout-title">💭 Цікавлюсь</div>
+<div class="callout-content">
 
-- Static site generators comparison
-- Personal knowledge management systems
-- Building CLI tools
-- Automating workflows with scripts
+Речі, які хочу дослідити:
 
-## Completed
+- Порівняння генераторів статичних сайтів
+- Системи управління персональними знаннями (PKM)
+- Автоматизація робочих процесів
+- CLI інструменти для продуктивності
 
-- [x] Set up this digital garden
-- [x] Custom Obsidian-like theme
-- [x] Dark mode toggle
-- [x] Responsive design
+</div>
+</div>
+
+## Завершено
+
+- [x] Налаштування цифрового саду
+- [x] Кастомна тема у стилі Obsidian
+- [x] Перемикач темної/світлої теми
+- [x] Адаптивний дизайн
+- [x] Пошук по сайту
+- [x] Автоматичний зміст сторінки
+
+## Технології
+
+| Технологія | Використання |
+|------------|--------------|
+| Jekyll | Генератор сайту |
+| GitHub Pages | Хостинг |
+| CSS Variables | Теми |
+| Vanilla JS | Інтерактивність |
 
 ---
 
-> "The best time to start was yesterday. The second best time is now."
+> "Найкращий час почати був учора. Другий найкращий час — зараз."
+
+<span class="tag">#projects</span>
+<span class="tag">#portfolio</span>

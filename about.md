@@ -1,43 +1,77 @@
 ---
-title: About
+title: Що це за сайт
+description: Про цей цифровий сад та як ним користуватися
+tags: [meta, about]
 ---
 
-## About This Garden
+## Про цей сайт
 
-This digital garden is built with Jekyll and styled to feel like Obsidian - a modern, minimal note-taking experience for the web.
+Це персональна база знань у форматі "цифрового саду" — місце, де нотатки ростуть і розвиваються з часом.
 
-### Philosophy
-
-<div class="callout">
-<div class="callout-title">Learn in Public</div>
-This garden embraces imperfection. Notes here range from rough seedlings to polished evergreen content.
+<div class="callout callout-tip">
+<div class="callout-title">🌱 Публічне навчання</div>
+<div class="callout-content">
+Цей сад приймає недосконалість. Нотатки тут варіюються від сирих ідей до повністю розвинутого контенту.
+</div>
 </div>
 
-The idea is simple: capture thoughts as they come, connect them over time, and let knowledge compound. Not everything needs to be a finished blog post.
+## Філософія
 
-### How It's Built
+Ідея проста: фіксувати думки, коли вони приходять, з'єднувати їх з часом, і дозволяти знанням накопичуватися. Не все має бути готовою статтею.
 
-This site uses:
+### Чому не блог?
 
-- **Jekyll** - A static site generator that GitHub Pages supports natively
-- **Markdown** - Plain text files that are easy to write and version control
-- **Custom CSS** - A hand-crafted theme inspired by Obsidian's aesthetic
-- **GitHub Pages** - Free hosting with automatic deployment
+| Блог | Цифровий сад |
+|------|--------------|
+| Хронологічний порядок | Зв'язки між нотатками |
+| Завершені статті | Еволюціонуючі ідеї |
+| Публікація раз | Постійне оновлення |
+| Один автор → читачі | Дослідження разом |
 
-### Note Stages
+## Стадії нотаток
 
-Notes in this garden follow a growth metaphor:
+Нотатки тут мають різні стадії зрілості:
 
-| Stage | Description |
-|-------|-------------|
-| 🌱 Seedling | Just planted, rough ideas |
-| 🌿 Growing | Being actively developed |
-| 🌳 Evergreen | Mature, well-developed notes |
+| Статус | Опис |
+|--------|------|
+| 🌱 Seedling | Щойно посаджено, сирі ідеї |
+| 🌿 Growing | Активно розвивається |
+| 🌳 Evergreen | Зріла, добре розвинута нотатка |
 
-### Connect
+## Як побудовано
 
-Feel free to explore, learn, and get inspired to start your own digital garden.
+<div class="callout callout-note">
+<div class="callout-title">📚 Технології</div>
+<div class="callout-content">
+
+- **Jekyll** — статичний генератор сайтів
+- **GitHub Pages** — безкоштовний хостинг
+- **Markdown** — простий текст для написання
+- **Custom CSS** — тема, натхненна Obsidian
+
+</div>
+</div>
+
+## Навігація
+
+### Бічна панель
+
+Зліва ви знайдете навігацію у форматі дерева файлів — як у Obsidian. Папки можна згортати та розгортати.
+
+### Пошук
+
+Натисніть `⌘K` (або `Ctrl+K`) для швидкого пошуку нотаток.
+
+### Зміст
+
+Справа показується зміст поточної сторінки для швидкої навігації по заголовках.
+
+### Тема
+
+Натисніть на іконку сонця/місяця внизу бічної панелі, щоб перемкнути між темною та світлою темами.
 
 ---
 
-*Built with curiosity and markdown.*
+<span class="tag">#meta</span>
+<span class="tag">#about</span>
+<span class="tag">#navigation</span>

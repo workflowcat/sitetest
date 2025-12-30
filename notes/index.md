@@ -1,46 +1,47 @@
 ---
-title: Notes
+title: Нотатки
+description: Колекція взаємопов'язаних нотаток та ідей
 ---
 
-A growing collection of interconnected notes and ideas.
+Зростаюча колекція взаємопов'язаних нотаток та ідей.
 
-## Browse by Topic
+## За темами
 
 <div class="card-grid">
 <div class="card">
 
-### Productivity
-Notes on personal knowledge management, workflows, and getting things done.
+### 📊 Продуктивність
+Нотатки про PKM, робочі процеси та ефективність.
 
-- [Intro to PKM](/notes/pkm-intro)
-
-</div>
-<div class="card">
-
-### Writing
-Tips and techniques for better writing and documentation.
-
-- [Markdown Tips](/notes/markdown-tips)
+- [Вступ до PKM](/notes/pkm-intro)
 
 </div>
 <div class="card">
 
-### Meta
-Thoughts about learning, building, and sharing in public.
+### ✍️ Написання
+Поради та техніки для кращого написання.
 
-- [Building in Public](/notes/building-in-public)
+- [Поради з Markdown](/notes/markdown-tips)
+
+</div>
+<div class="card">
+
+### 🔮 Мета
+Думки про навчання та публічну діяльність.
+
+- [Публічне навчання](/notes/building-in-public)
 
 </div>
 </div>
 
-## All Notes
+## Всі нотатки
 
-| Title | Status | Last Updated |
-|-------|--------|--------------|
-| [Intro to PKM](/notes/pkm-intro) | 🌱 Seedling | Recently |
-| [Markdown Tips](/notes/markdown-tips) | 🌳 Evergreen | Recently |
-| [Building in Public](/notes/building-in-public) | 🌿 Growing | Recently |
+| Назва | Статус | Тема |
+|-------|--------|------|
+| [Вступ до PKM](/notes/pkm-intro) | 🌱 | Продуктивність |
+| [Поради з Markdown](/notes/markdown-tips) | 🌳 | Написання |
+| [Публічне навчання](/notes/building-in-public) | 🌿 | Мета |
 
 ---
 
-*Notes grow and evolve over time. Nothing here is final.*
+*Нотатки ростуть і еволюціонують з часом. Нічого тут не є фінальним.*
