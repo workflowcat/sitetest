@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | default: site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <nav class="sidebar">
+      <div class="sidebar-header">
+        <a href="{{ '/' | relative_url }}" class="logo">{{ site.title }}</a>
+      </div>
+      <div class="nav-links">
+        <a href="{{ '/' | relative_url }}" class="nav-link {% if page.url == '/' %}active{% endif %}">
+          <span class="icon">🏠</span> Home
+        </a>
+        <a href="{{ '/about' | relative_url }}" class="nav-link {% if page.url == '/about/' %}active{% endif %}">
+          <span class="icon">👤</span> About
+        </a>
+        <a href="{{ '/notes/' | relative_url }}" class="nav-link {% if page.url contains '/notes' %}active{% endif %}">
+          <span class="icon">📝</span> Notes
+        </a>
+        <a href="{{ '/projects' | relative_url }}" class="nav-link {% if page.url == '/projects/' %}active{% endif %}">
+          <span class="icon">🚀</span> Projects
+        </a>
+      </div>
+      <div class="sidebar-footer">
+        <span class="theme-toggle" onclick="toggleTheme()">🌙</span>
+      </div>
+    </nav>
+    <main class="content">
+      <article class="note">
+        {% if page.title %}
+        <h1 class="note-title">{{ page.title }}</h1>
+        {% endif %}
+        {{ content }}
+      </article>
+    </main>
+  </div>
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+    }
+    if (localStorage.getItem('theme') === 'dark' ||
+        (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.body.classList.add('dark');
+    }
+  </script>
+</body>
+</html>
