@@ -9,14 +9,6 @@ kramdown:
   hard_wrap: false
   syntax_highlighter: rouge
 
-plugins:
-  - jekyll-seo-tag
-  - jekyll-relative-links
-
-relative_links:
-  enabled: true
-  collections: true
-
 defaults:
   - scope:
       path: ""
