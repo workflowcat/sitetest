@@ -1,56 +1,58 @@
 ---
-title: Welcome to My Digital Garden
+title: Ласкаво просимо
+description: Персональна база знань та цифровий сад
 ---
 
-This is a minimal, Obsidian-inspired digital garden for capturing ideas, notes, and knowledge.
+Це мій цифровий сад — місце для думок, ідей та нотаток, що ростуть і розвиваються з часом.
 
-## What is a Digital Garden?
+<div class="callout callout-info">
+<div class="callout-title">💡 Що таке цифровий сад?</div>
+<div class="callout-content">
+Цифровий сад — це колекція взаємопов'язаних нотаток та ідей. На відміну від блогу, тут немає хронологічного порядку. Нотатки еволюціонують, доповнюються та з'єднуються між собою.
+</div>
+</div>
 
-A digital garden is a collection of evolving notes, ideas, and thoughts that grow over time. Unlike a traditional blog with polished posts, a digital garden embraces the messiness of learning in public.
-
-> "A garden is a collection of evolving ideas that aren't strictly organized by their publication date. They're inherently exploratory."
-
-## Getting Started
+## Навігація
 
 <div class="card-grid">
 <div class="card">
 
-### [Notes](/notes/)
-Browse through interconnected notes and ideas on various topics.
+### 📝 [Нотатки](/notes/)
+Колекція думок, ідей та знань на різні теми.
 
 </div>
 <div class="card">
 
-### [Projects](/projects)
-Explore ongoing and completed projects with detailed documentation.
+### 🚀 [Проєкти](/projects)
+Поточні та завершені проєкти з документацією.
 
 </div>
 <div class="card">
 
-### [About](/about)
-Learn more about this digital garden and its creator.
+### ℹ️ [Про сайт](/about)
+Як користуватися цим сайтом та що тут можна знайти.
 
 </div>
 </div>
 
-## Features
+## Особливості
 
-- **Markdown-powered** - Write in plain markdown, no database needed
-- **Wikilinks** - Connect ideas with `[[internal links]]`
-- **Dark mode** - Easy on the eyes, toggle with the moon icon
-- **Fast & minimal** - No JavaScript frameworks, just clean HTML/CSS
-- **Mobile friendly** - Responsive design that works everywhere
+- **Markdown** — весь контент написаний простим текстом
+- **Темна тема** — за замовчуванням, з можливістю перемкнути на світлу
+- **Пошук** — швидкий пошук нотаток (⌘K)
+- **Зміст** — автоматична навігація по сторінці
+- **Зворотні посилання** — бачте, які сторінки посилаються на поточну
 
-## Recent Notes
+## Останні нотатки
 
-| Note | Topic | Status |
-|------|-------|--------|
-| [Getting Started with PKM](/notes/pkm-intro) | Productivity | Seedling |
-| [Markdown Tips](/notes/markdown-tips) | Writing | Evergreen |
-| [Building in Public](/notes/building-in-public) | Meta | Growing |
+| Назва | Тема | Статус |
+|-------|------|--------|
+| [Вступ до PKM](/notes/pkm-intro) | Продуктивність | 🌱 |
+| [Поради з Markdown](/notes/markdown-tips) | Написання | 🌳 |
+| [Публічне навчання](/notes/building-in-public) | Мета | 🌿 |
 
 ---
 
-<span class="tag">digital-garden</span>
-<span class="tag">markdown</span>
-<span class="tag">obsidian-style</span>
+<span class="tag">#digital-garden</span>
+<span class="tag">#knowledge-base</span>
+<span class="tag">#obsidian</span>

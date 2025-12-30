@@ -1,5 +1,5 @@
 title: Digital Garden
-description: A minimal Obsidian-like markdown knowledge base
+description: Персональна база знань та нотатки
 baseurl: "/sitetest"
 url: ""
 
@@ -8,6 +8,7 @@ kramdown:
   input: GFM
   hard_wrap: false
   syntax_highlighter: rouge
+  auto_ids: true
 
 defaults:
   - scope:
@@ -20,3 +21,5 @@ exclude:
   - LICENSE
   - Gemfile
   - Gemfile.lock
+  - node_modules
+  - vendor
