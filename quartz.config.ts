@@ -3,10 +3,7 @@ import * as Plugin from "./quartz/plugins"
 
 /**
  * Quartz 4 Configuration
- * Digital Garden / Цифровий сад
- *
- * A refined, timeless design inspired by letterpress printing
- * and classic book typography
+ * Digital Garden - Minimal Design
  */
 const config: QuartzConfig = {
   configuration: {
@@ -23,32 +20,32 @@ const config: QuartzConfig = {
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "Newsreader",
-        body: "Newsreader",
+        header: "Inter",
+        body: "Inter",
         code: "JetBrains Mono",
       },
       colors: {
         lightMode: {
-          light: "#FDFBF7",           // Aged cream paper
-          lightgray: "#F0EBE3",       // Soft parchment
-          gray: "#9A918A",            // Warm stone
-          darkgray: "#5C564F",        // Deep warm gray
-          dark: "#2C2825",            // Rich charcoal ink
-          secondary: "#6B7F6B",       // Muted sage (sophisticated green)
-          tertiary: "#8B6B5C",        // Warm terracotta
-          highlight: "rgba(107, 127, 107, 0.08)",
-          textHighlight: "#F7EED0",   // Soft golden highlight
+          light: "#ffffff",
+          lightgray: "#f5f5f5",
+          gray: "#a0a0a0",
+          darkgray: "#666666",
+          dark: "#333333",
+          secondary: "#333333",
+          tertiary: "#666666",
+          highlight: "rgba(0, 0, 0, 0.03)",
+          textHighlight: "#fff3a0",
         },
         darkMode: {
-          light: "#1A1817",           // Deep warm black
-          lightgray: "#2A2624",       // Warm dark gray
-          gray: "#6B635A",            // Muted warm gray
-          darkgray: "#C9C2B8",        // Soft warm light
-          dark: "#F0EBE3",            // Cream white text
-          secondary: "#9DB39D",       // Soft sage
-          tertiary: "#C4A594",        // Warm blush
-          highlight: "rgba(157, 179, 157, 0.10)",
-          textHighlight: "#3D3530",
+          light: "#161616",
+          lightgray: "#242424",
+          gray: "#606060",
+          darkgray: "#b0b0b0",
+          dark: "#e8e8e8",
+          secondary: "#e8e8e8",
+          tertiary: "#b0b0b0",
+          highlight: "rgba(255, 255, 255, 0.05)",
+          textHighlight: "#3d3d00",
         },
       },
     },

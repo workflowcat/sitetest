@@ -1,21 +1,13 @@
 @use "./base.scss";
 
 // ============================================
-// Digital Garden - Timeless Typographic Theme
-// Inspired by letterpress printing, classic books,
-// and the refined aesthetics of physical media
+// Minimal Design - Quiet Utility
+// Content-first, distraction-free reading
 // ============================================
 
-// === DESIGN TOKENS ===
-$scale-ratio: 1.25; // Major third scale
-$base-size: 1.125rem;
-$content-width: 42rem; // ~65-75 characters optimal reading
-$transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
-$transition-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
-
-// === FOUNDATIONAL TYPOGRAPHY ===
+// === FOUNDATIONS ===
 html {
-  font-size: 18px;
+  font-size: 17px;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -26,769 +18,430 @@ html {
 }
 
 body {
-  line-height: 1.7;
-  letter-spacing: 0.01em;
+  line-height: 1.75;
+  letter-spacing: 0.005em;
   text-rendering: optimizeLegibility;
-  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
-  font-variant-ligatures: common-ligatures;
 }
 
-// === MODULAR SCALE HEADINGS ===
+// === TYPOGRAPHY - Quiet Hierarchy ===
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 500;
-  line-height: 1.25;
-  letter-spacing: -0.02em;
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
   color: var(--dark);
-  font-feature-settings: "kern" 1, "liga" 1, "ss01" 1;
 }
 
+// Minimal size differences - hierarchy through weight, not size
 h1 {
-  font-size: calc(#{$base-size} * #{$scale-ratio} * #{$scale-ratio} * #{$scale-ratio});
-  font-weight: 600;
-  letter-spacing: -0.03em;
+  font-size: 1.35rem;
   margin-top: 0;
-  margin-bottom: 1.5rem;
-
-  @media (max-width: 600px) {
-    font-size: calc(#{$base-size} * #{$scale-ratio} * #{$scale-ratio});
-  }
+  margin-bottom: 1rem;
 }
 
 h2 {
-  font-size: calc(#{$base-size} * #{$scale-ratio} * #{$scale-ratio});
-  margin-top: 3rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid var(--lightgray);
-
-  // Elegant underline effect
-  position: relative;
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 3rem;
-    height: 2px;
-    background: var(--secondary);
-    border-radius: 1px;
-  }
+  font-size: 1.15rem;
+  margin-top: 2.5rem;
 }
 
 h3 {
-  font-size: calc(#{$base-size} * #{$scale-ratio});
-  margin-top: 2rem;
-  color: var(--darkgray);
+  font-size: 1.05rem;
 }
 
-h4 {
-  font-size: $base-size;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--gray);
+h4, h5, h6 {
+  font-size: 1rem;
 }
 
-// === PARAGRAPH RHYTHM ===
+// === PARAGRAPHS ===
 p {
-  margin-bottom: 1.5rem;
-  text-align: left;
-  hyphens: auto;
-  hanging-punctuation: first last;
+  margin-bottom: 1.25rem;
 
   &:last-child {
     margin-bottom: 0;
   }
 }
 
-// First paragraph after heading - slight indent feel
-h2 + p,
-h3 + p {
-  margin-top: 0.5rem;
-}
-
-// === ELEGANT LINKS ===
+// === LINKS - Invisible Until Needed ===
 a {
+  color: inherit;
   text-decoration: none;
-  color: var(--secondary);
-  transition: all 0.2s $transition-smooth;
-  position: relative;
-
-  // Animated underline
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background: currentColor;
-    transition: width 0.3s $transition-smooth;
-  }
+  transition: opacity 0.15s ease;
 
   &:hover {
-    color: var(--tertiary);
-
-    &::after {
-      width: 100%;
-    }
+    opacity: 0.6;
   }
 }
 
-// Internal wikilinks - subtle highlight treatment
+// Internal links - subtle underline
 a.internal {
-  background: linear-gradient(
-    to top,
-    var(--highlight) 0%,
-    var(--highlight) 40%,
-    transparent 40%
-  );
-  padding: 0.1em 0.15em;
-  margin: 0 -0.15em;
-  border-radius: 3px;
-  transition: all 0.2s $transition-smooth;
-
-  &::after {
-    display: none;
-  }
+  text-decoration: underline;
+  text-decoration-color: var(--lightgray);
+  text-underline-offset: 2px;
+  background: none;
+  padding: 0;
+  border-radius: 0;
 
   &:hover {
-    background: var(--highlight);
-    color: var(--secondary);
+    text-decoration-color: var(--gray);
+    opacity: 1;
   }
 }
 
-// === BEAUTIFUL BLOCKQUOTES ===
-blockquote {
-  margin: 2rem 0;
-  padding: 1.5rem 2rem;
-  background: linear-gradient(
-    135deg,
-    var(--lightgray) 0%,
-    transparent 100%
-  );
-  border-left: 3px solid var(--secondary);
-  border-radius: 0 12px 12px 0;
-  font-style: italic;
-  position: relative;
+// External links
+a.external {
+  text-decoration: underline;
+  text-decoration-color: var(--lightgray);
+  text-underline-offset: 2px;
 
-  // Quotation mark ornament
-  &::before {
-    content: '"';
-    position: absolute;
-    top: -0.5rem;
-    left: 1rem;
-    font-size: 4rem;
-    font-family: Georgia, serif;
-    color: var(--secondary);
-    opacity: 0.15;
-    line-height: 1;
+  &:hover {
+    text-decoration-color: var(--gray);
+    opacity: 1;
   }
+}
+
+// === BLOCKQUOTES - Simple ===
+blockquote {
+  margin: 1.5rem 0;
+  padding: 0 0 0 1.25rem;
+  border-left: 2px solid var(--lightgray);
+  color: var(--darkgray);
+  font-style: normal;
 
   p {
     margin-bottom: 0.75rem;
-    position: relative;
-    z-index: 1;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  cite, em:last-child {
-    display: block;
-    margin-top: 1rem;
-    font-size: 0.9rem;
-    font-style: normal;
-    color: var(--gray);
-
-    &::before {
-      content: '— ';
-    }
   }
 }
 
-// === CODE STYLING ===
+// === CODE - Blend In ===
 code {
   font-family: var(--codeFont);
-  font-size: 0.875em;
-  padding: 0.2em 0.45em;
+  font-size: 0.9em;
+  padding: 0.15em 0.35em;
   background: var(--lightgray);
-  border-radius: 4px;
-  font-feature-settings: "liga" 0;
+  border-radius: 3px;
 }
 
 pre {
-  margin: 2rem 0;
-  padding: 1.5rem;
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
   background: var(--lightgray);
-  border-radius: 12px;
+  border-radius: 4px;
   overflow-x: auto;
-  border: 1px solid color-mix(in srgb, var(--gray) 20%, transparent);
-  position: relative;
-
-  // Subtle corner accent
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 100%;
-    background: linear-gradient(
-      to bottom,
-      var(--secondary),
-      var(--tertiary)
-    );
-    border-radius: 12px 0 0 12px;
-  }
+  border: none;
 
   code {
     background: none;
     padding: 0;
-    font-size: 0.9rem;
+    font-size: 0.875rem;
     line-height: 1.6;
   }
 }
 
-// === REFINED TABLES ===
+// === TABLES - Clean Grid ===
 table {
   width: 100%;
-  margin: 2rem 0;
-  border-collapse: separate;
-  border-spacing: 0;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-  border: 1px solid var(--lightgray);
-}
-
-thead {
-  background: linear-gradient(
-    to bottom,
-    var(--lightgray),
-    color-mix(in srgb, var(--lightgray) 80%, var(--light))
-  );
+  margin: 1.5rem 0;
+  border-collapse: collapse;
+  font-size: 0.95rem;
 }
 
 th {
-  padding: 1rem 1.25rem;
   text-align: left;
   font-weight: 600;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--darkgray);
-  border-bottom: 2px solid color-mix(in srgb, var(--gray) 30%, transparent);
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--gray);
 }
 
 td {
-  padding: 1rem 1.25rem;
+  padding: 0.5rem 0.75rem;
   border-bottom: 1px solid var(--lightgray);
 }
 
-tbody tr {
-  transition: background 0.15s $transition-smooth;
-
-  &:hover {
-    background: var(--highlight);
-  }
-
-  &:last-child td {
-    border-bottom: none;
-  }
+tbody tr:last-child td {
+  border-bottom: none;
 }
 
 // === LISTS ===
 ul, ol {
-  margin: 1.5rem 0;
-  padding-left: 1.75rem;
+  margin: 1.25rem 0;
+  padding-left: 1.5rem;
 }
 
 li {
-  margin-bottom: 0.5rem;
-  padding-left: 0.25rem;
+  margin-bottom: 0.35rem;
 
   &::marker {
-    color: var(--secondary);
+    color: var(--gray);
   }
 }
 
 // Nested lists
 ul ul, ol ol, ul ol, ol ul {
-  margin: 0.5rem 0;
+  margin: 0.35rem 0;
 }
 
-// Task lists
-ul.contains-task-list {
-  list-style: none;
-  padding-left: 0;
-
-  li {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid var(--lightgray);
-
-    &:last-child {
-      border-bottom: none;
-    }
-  }
-
-  input[type="checkbox"] {
-    margin-top: 0.35rem;
-    width: 1.1rem;
-    height: 1.1rem;
-    accent-color: var(--secondary);
-    cursor: pointer;
-  }
-}
-
-// === IMAGES ===
+// === IMAGES - No Drama ===
 img {
   max-width: 100%;
   height: auto;
-  border-radius: 12px;
-  margin: 2rem 0;
-  box-shadow:
-    0 4px 6px rgba(0, 0, 0, 0.04),
-    0 10px 24px rgba(0, 0, 0, 0.06);
-  transition: all 0.3s $transition-smooth;
-
-  &:hover {
-    box-shadow:
-      0 8px 12px rgba(0, 0, 0, 0.06),
-      0 16px 32px rgba(0, 0, 0, 0.08);
-    transform: translateY(-2px);
-  }
+  border-radius: 3px;
+  margin: 1.5rem 0;
 }
 
 figure {
-  margin: 2.5rem 0;
-  text-align: center;
-
-  img {
-    margin-bottom: 1rem;
-  }
+  margin: 1.5rem 0;
 
   figcaption {
-    font-size: 0.9rem;
+    font-size: 0.875rem;
     color: var(--gray);
-    font-style: italic;
-    max-width: 80%;
-    margin: 0 auto;
-    line-height: 1.5;
+    margin-top: 0.5rem;
   }
 }
 
-// === HORIZONTAL RULES ===
+// === HORIZONTAL RULES - Simple ===
 hr {
   border: none;
-  margin: 3.5rem 0;
-  text-align: center;
-
-  &::before {
-    content: '◆ ◆ ◆';
-    font-size: 0.6rem;
-    letter-spacing: 1em;
-    color: var(--gray);
-    opacity: 0.5;
-  }
+  border-top: 1px solid var(--lightgray);
+  margin: 2.5rem 0;
 }
 
-// === CALLOUT REFINEMENTS ===
+// === CALLOUTS - Whisper ===
 .callout {
-  margin: 2rem 0;
-  border-radius: 12px;
-  border: 1px solid var(--lightgray);
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  background: var(--lightgray);
+  border-radius: 4px;
+  border: none;
+  font-size: 0.95rem;
 
   .callout-title {
-    padding: 0.875rem 1.25rem;
     font-weight: 600;
     font-size: 0.9rem;
+    margin-bottom: 0.5rem;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    background: var(--lightgray);
-    border-bottom: 1px solid color-mix(in srgb, var(--gray) 15%, transparent);
+    gap: 0.4rem;
+    color: var(--darkgray);
+    padding: 0;
+    background: none;
+    border: none;
   }
 
   .callout-content {
-    padding: 1.25rem;
+    padding: 0;
+    color: var(--darkgray);
 
     > p:last-child {
       margin-bottom: 0;
     }
   }
 
-  // Callout type colors
-  &[data-callout="info"],
-  &[data-callout="note"] {
-    border-left: 4px solid var(--secondary);
-  }
-
-  &[data-callout="tip"],
-  &[data-callout="hint"] {
-    border-left: 4px solid var(--tertiary);
-  }
-
-  &[data-callout="warning"],
-  &[data-callout="caution"] {
-    border-left: 4px solid #D4A574;
-  }
-
-  &[data-callout="quote"],
-  &[data-callout="abstract"] {
-    border-left: 4px solid var(--gray);
-    font-style: italic;
+  // Remove colored borders
+  &[data-callout] {
+    border-left: none;
   }
 }
 
 // === PAGE TITLE ===
 .article-title {
-  font-size: 2.75rem;
+  font-size: 1.5rem;
   font-weight: 600;
-  letter-spacing: -0.035em;
-  line-height: 1.15;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
   margin-bottom: 0.5rem;
-  color: var(--dark);
 
   @media (max-width: 600px) {
-    font-size: 2rem;
+    font-size: 1.35rem;
   }
 }
 
 // === CONTENT META ===
 .content-meta {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--gray);
-  margin-bottom: 2.5rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--lightgray);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  align-items: center;
+  margin-bottom: 2rem;
 }
 
-// === TAGS ===
+// === TAGS - Simple Text ===
 a.tag-link {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.35rem 0.9rem;
-  background: var(--lightgray);
-  border-radius: 100px;
   font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--darkgray);
-  transition: all 0.2s $transition-smooth;
-  border: 1px solid transparent;
+  color: var(--gray);
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  text-decoration: none;
 
-  &::after {
-    display: none;
+  &::before {
+    content: "#";
   }
 
   &:hover {
-    background: var(--light);
-    border-color: var(--secondary);
-    color: var(--secondary);
-    transform: translateY(-1px);
+    color: var(--darkgray);
+    opacity: 1;
   }
 }
 
-// === SIDEBAR STYLING ===
+// === SIDEBAR ===
 .sidebar {
   .page-title {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     font-weight: 600;
-    letter-spacing: -0.02em;
 
     a {
       color: var(--dark);
 
-      &::after {
-        display: none;
-      }
-
       &:hover {
-        color: var(--secondary);
+        opacity: 0.6;
       }
     }
   }
 }
 
-// === EXPLORER ===
+// === EXPLORER - Minimal ===
 .explorer {
   h2 {
     font-size: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.08em;
     color: var(--gray);
     font-weight: 600;
-    margin-bottom: 1rem;
-    border-bottom: none;
+    margin-bottom: 0.75rem;
+  }
 
-    &::after {
-      display: none;
-    }
+  button, a {
+    font-size: 0.9rem;
   }
 }
 
-// === TABLE OF CONTENTS ===
+// === TABLE OF CONTENTS - Light ===
 .toc {
-  padding: 1.25rem;
-  background: var(--lightgray);
-  border-radius: 12px;
-  border: 1px solid color-mix(in srgb, var(--gray) 10%, transparent);
+  font-size: 0.85rem;
 
   .toc-title {
     font-size: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.08em;
     color: var(--gray);
     font-weight: 600;
-    margin-bottom: 1rem;
-  }
-
-  a {
-    font-size: 0.875rem;
-    color: var(--darkgray);
-
-    &::after {
-      display: none;
-    }
-
-    &:hover {
-      color: var(--secondary);
-    }
-  }
-}
-
-// === GRAPH ===
-.graph {
-  border-radius: 12px;
-  border: 1px solid var(--lightgray);
-  background: var(--light);
-  overflow: hidden;
-}
-
-// === BACKLINKS ===
-.backlinks {
-  margin-top: 4rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--lightgray);
-
-  h3 {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--gray);
-    font-weight: 600;
-    margin-bottom: 1.25rem;
-    border-bottom: none;
-
-    &::after {
-      display: none;
-    }
+    margin-bottom: 0.75rem;
   }
 
   ul {
+    padding-left: 0;
     list-style: none;
-    padding: 0;
   }
 
   li {
-    margin-bottom: 0.75rem;
-    padding: 0.5rem 0.75rem;
-    background: var(--lightgray);
-    border-radius: 8px;
-    transition: background 0.2s $transition-smooth;
+    margin-bottom: 0.25rem;
+  }
+
+  a {
+    color: var(--gray);
 
     &:hover {
-      background: var(--highlight);
+      color: var(--dark);
+      opacity: 1;
     }
+  }
+
+  // Active state
+  .depth-0 > a {
+    font-weight: 500;
   }
 }
 
 // === SEARCH ===
 .search-button {
-  border-radius: 10px;
   border: 1px solid var(--lightgray);
-  background: var(--light);
-  transition: all 0.2s $transition-smooth;
-
-  &:hover {
-    border-color: var(--secondary);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  }
-}
-
-// === FOOTER ===
-footer {
-  margin-top: 4rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--lightgray);
+  background: transparent;
+  border-radius: 4px;
   font-size: 0.875rem;
   color: var(--gray);
 
-  a {
-    color: var(--gray);
-
-    &:hover {
-      color: var(--secondary);
-    }
-  }
-}
-
-// === POPOVER ===
-.popover {
-  border-radius: 12px;
-  border: 1px solid var(--lightgray);
-  background: var(--light);
-  box-shadow:
-    0 4px 6px rgba(0, 0, 0, 0.04),
-    0 12px 32px rgba(0, 0, 0, 0.1);
-
-  .popover-inner {
-    padding: 1.25rem;
-    max-height: 400px;
-    overflow-y: auto;
-  }
-}
-
-// === SELECTION ===
-::selection {
-  background: var(--textHighlight);
-  color: var(--dark);
-}
-
-// === FOCUS STATES ===
-:focus-visible {
-  outline: 2px solid var(--secondary);
-  outline-offset: 3px;
-  border-radius: 4px;
-}
-
-// === SMOOTH PAGE TRANSITIONS ===
-.page {
-  animation: fadeIn 0.4s $transition-smooth;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  &:hover {
+    border-color: var(--gray);
   }
 }
 
 // === BREADCRUMBS ===
 .breadcrumb-container {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--gray);
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 
   a {
     color: var(--gray);
 
     &:hover {
-      color: var(--secondary);
+      color: var(--dark);
+      opacity: 1;
     }
-  }
-
-  .breadcrumb-separator {
-    margin: 0 0.5rem;
-    opacity: 0.5;
   }
 }
 
-// === READING PROGRESS (optional enhancement) ===
-.center {
-  max-width: $content-width;
+// === FOOTER - Nearly Invisible ===
+footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--lightgray);
+  font-size: 0.8rem;
+  color: var(--gray);
+}
+
+// === POPOVER ===
+.popover {
+  border-radius: 4px;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  .popover-inner {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+// === SELECTION ===
+::selection {
+  background: var(--lightgray);
+  color: var(--dark);
+}
+
+// === FOCUS STATES ===
+:focus-visible {
+  outline: 1px solid var(--gray);
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 // === DARK MODE ADJUSTMENTS ===
 :root[saved-theme="dark"] {
   img {
-    opacity: 0.92;
-
-    &:hover {
-      opacity: 1;
-    }
-  }
-
-  blockquote::before {
-    opacity: 0.1;
-  }
-
-  pre {
-    border-color: var(--lightgray);
+    opacity: 0.9;
   }
 }
 
-// === PRINT STYLES ===
+// === PRINT ===
 @media print {
   body {
-    background: white;
-    color: black;
-    font-size: 12pt;
-    line-height: 1.5;
+    font-size: 11pt;
   }
 
   .sidebar,
   .toc,
-  .graph,
-  .backlinks,
   .search-button,
   footer {
     display: none !important;
   }
 
   a {
-    color: inherit;
     text-decoration: underline;
-
-    &::after {
-      display: none;
-    }
-  }
-
-  h1, h2, h3 {
-    page-break-after: avoid;
-  }
-
-  img {
-    max-width: 100%;
-    box-shadow: none;
-  }
-
-  pre, blockquote {
-    page-break-inside: avoid;
   }
 }
 
-// === SUBTLE TEXTURE (optional - adds paper feel) ===
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  opacity: 0.015;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  z-index: 9999;
-}
-
-:root[saved-theme="dark"] body::before {
-  opacity: 0.03;
+// === CONTENT WIDTH ===
+.center {
+  max-width: 40rem;
 }
