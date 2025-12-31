@@ -15,7 +15,7 @@ const config: QuartzConfig = {
     enableSPA: true,
     enablePopovers: true,
     analytics: null,
-    locale: "uk-UA",
+    locale: "en-US",
     baseUrl: "workflowcat.github.io/sitetest",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
