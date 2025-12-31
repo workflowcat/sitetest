@@ -5,7 +5,8 @@ import * as Plugin from "./quartz/plugins"
  * Quartz 4 Configuration
  * Digital Garden / Цифровий сад
  *
- * A refined, paper-like aesthetic with warm tones
+ * A refined, timeless design inspired by letterpress printing
+ * and classic book typography
  */
 const config: QuartzConfig = {
   configuration: {
@@ -22,32 +23,32 @@ const config: QuartzConfig = {
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "Source Serif 4",
-        body: "Source Serif 4",
+        header: "Newsreader",
+        body: "Newsreader",
         code: "JetBrains Mono",
       },
       colors: {
         lightMode: {
-          light: "#faf8f5",          // Warm paper white
-          lightgray: "#f0ebe3",      // Cream
-          gray: "#b8b0a4",           // Warm gray
-          darkgray: "#5c5650",       // Dark warm gray
-          dark: "#2d2926",           // Almost black, warm
-          secondary: "#8b5e3c",      // Warm brown/terracotta
-          tertiary: "#6b8f71",       // Sage green
-          highlight: "rgba(139, 94, 60, 0.08)",
-          textHighlight: "#f7e8c8",  // Soft yellow highlight
+          light: "#FDFBF7",           // Aged cream paper
+          lightgray: "#F0EBE3",       // Soft parchment
+          gray: "#9A918A",            // Warm stone
+          darkgray: "#5C564F",        // Deep warm gray
+          dark: "#2C2825",            // Rich charcoal ink
+          secondary: "#6B7F6B",       // Muted sage (sophisticated green)
+          tertiary: "#8B6B5C",        // Warm terracotta
+          highlight: "rgba(107, 127, 107, 0.08)",
+          textHighlight: "#F7EED0",   // Soft golden highlight
         },
         darkMode: {
-          light: "#1a1816",          // Dark warm
-          lightgray: "#2a2622",      // Dark cream
-          gray: "#6b635a",           // Muted warm
-          darkgray: "#d4cdc4",       // Light warm
-          dark: "#f0ebe3",           // Cream text
-          secondary: "#c9a87c",      // Golden brown
-          tertiary: "#8fb896",       // Soft sage
-          highlight: "rgba(201, 168, 124, 0.12)",
-          textHighlight: "#4a3f2f",
+          light: "#1A1817",           // Deep warm black
+          lightgray: "#2A2624",       // Warm dark gray
+          gray: "#6B635A",            // Muted warm gray
+          darkgray: "#C9C2B8",        // Soft warm light
+          dark: "#F0EBE3",            // Cream white text
+          secondary: "#9DB39D",       // Soft sage
+          tertiary: "#C4A594",        // Warm blush
+          highlight: "rgba(157, 179, 157, 0.10)",
+          textHighlight: "#3D3530",
         },
       },
     },
