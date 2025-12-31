@@ -1,8 +1,8 @@
-name: Deploy Jekyll site to GitHub Pages
+name: Deploy Quartz site to GitHub Pages
 
 on:
   push:
-    branches: ["main", "claude/*"]
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -20,24 +20,27 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2'
-          bundler-cache: true
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Quartz
+        run: npx quartz build
 
       - name: Setup Pages
-        id: pages
         uses: actions/configure-pages@v4
-
-      - name: Build with Jekyll
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
-        env:
-          JEKYLL_ENV: production
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
 
   deploy:
     environment:
