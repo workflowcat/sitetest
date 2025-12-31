@@ -1,49 +1,53 @@
-# Digital Garden
+# Digital Garden / Цифровий сад
 
-A minimal, Obsidian-inspired markdown-based website built with Jekyll and deployed to GitHub Pages.
+A personal knowledge base built with [Quartz v4](https://quartz.jzhao.xyz/).
 
 ## Features
 
-- Clean, modern design inspired by Obsidian
-- Dark mode with automatic detection
-- Responsive layout for mobile
-- Markdown-powered content
-- Automatic deployment via GitHub Actions
+- 🔍 **Full-text search** - Find anything instantly
+- 🔗 **Backlinks** - See what links to each page
+- 📊 **Graph view** - Visualize connections between notes
+- 🌙 **Dark/light mode** - Easy on the eyes
+- 📱 **Mobile friendly** - Works everywhere
+- ⚡ **Fast** - Static site, no database
+- 🎨 **Hover previews** - Preview links without clicking
 
 ## Local Development
 
 ```bash
 # Install dependencies
-bundle install
+npm install
 
-# Start local server
-bundle exec jekyll serve
+# Start development server
+npx quartz build --serve
+
+# Build for production
+npx quartz build
 ```
 
-Visit `http://localhost:4000/sitetest/`
+## Adding Content
+
+1. Create/edit markdown files in `content/`
+2. Use `[[wikilinks]]` for internal links
+3. Use Obsidian-style callouts: `> [!note]`
+4. Commit and push to deploy
 
 ## Structure
 
 ```
-├── _layouts/        # HTML templates
-├── assets/css/      # Stylesheets
-├── notes/           # Note content
-├── index.md         # Home page
-├── about.md         # About page
-└── projects.md      # Projects page
+content/
+├── index.md          # Home page
+├── about.md          # About page
+├── projects.md       # Projects
+└── notes/            # Notes folder
+    ├── index.md
+    ├── pkm-intro.md
+    ├── markdown-tips.md
+    └── building-in-public.md
 ```
 
 ## Deployment
 
-The site automatically deploys to GitHub Pages when you push to the main branch. The GitHub Actions workflow handles the build and deployment process.
+Automatically deploys to GitHub Pages on push to `main`.
 
-## Adding Content
-
-1. Create a new `.md` file in the appropriate directory
-2. Add front matter with at least a `title`
-3. Write your content in markdown
-4. Commit and push
-
-## License
-
-MIT
+Built with [Quartz](https://quartz.jzhao.xyz/) by [@jackyzha0](https://github.com/jackyzha0).
